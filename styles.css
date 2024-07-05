@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    font-family: Roboto, serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 90vh;
+}
+
+.calculator-container {
+    width: 30vw;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.display-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 1;
+
+    background-color: rgba(165, 210, 252, 0.753);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid black;
+}
+
+.display-container > div {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 3;
+}
+
+.row {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+button {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: white;
+
+    border-style: none;
+}
+
+.clear {
+    flex: 2;
+    background-color: rgba(182, 182, 182, 0.342);
+}
+
+.equals {
+    flex: 2;
+    background-color: rgba(165, 210, 252, 0.507);
+    border-bottom-right-radius: 20px;
+}
+
+.delete {
+    flex: 1;
+    background-color: rgba(206, 204, 204, 0.342);
+}
+
+.operator {
+    flex: 1;
+    background-color: rgba(206, 204, 204, 0.342);
+}
+
+.result {
+    font-size: 60px;
+}
+
+.equation {
+    font-size: 48px;
+    color: rgba(32, 32, 32, 0.815);
+}
+
+#zero {
+    border-bottom-left-radius: 20px;
+}
+
+button:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.clear:hover, .delete:hover {
+    background-color: rgba(133, 133, 133, 0.342);
+}
+
+.equals:hover {
+    background-color: rgba(112, 167, 219, 0.5);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
