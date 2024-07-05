@@ -13,8 +13,8 @@ body {
 }
 
 .calculator-container {
-    max-width: 600px;
-    max-height: 900px;
+    max-width: 500px;
+    max-height: 700px;
     width: 30vw;
     height: 70vh;
 
