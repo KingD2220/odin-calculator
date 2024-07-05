@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     align-items: end;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 0.4vw;
     flex: 1;
 
     background-color: rgba(165, 210, 252, 0.753);
