@@ -13,9 +13,9 @@ body {
 }
 
 .calculator-container {
-    max-width: 500px;
+    min-width: 450px;
     max-height: 700px;
-    width: 30vw;
+    width: auto;
     height: 70vh;
 
     display: flex;
