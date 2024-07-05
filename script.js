@@ -2,7 +2,10 @@ let operand1 = '0';
 let operand2 = '';
 let operator = '';
 let lastInput = '';
+let equation = '';
 let solution = '0';
+
+const MAX_LENGTH = 16;
 
 let equationDisplay = document.querySelector('.equation');
 let resultDisplay = document.querySelector('.result');
@@ -28,7 +31,7 @@ const operate = function(operand1, operator, operand2) {
     let result;
     let converted1 = Number(operand1);
     let converted2 = Number(operand2);
-
+    console.log(converted2);
     switch(operator) {
         case '+':
             result = add(converted1, converted2);
@@ -40,6 +43,10 @@ const operate = function(operand1, operator, operand2) {
             result = multiply(converted1, converted2);
             break;
         case '÷':
+            if (converted2 === 0) {
+                result = 'ERROR';
+                break;
+            }
             result = divide(converted1, converted2);
             break;
     }
@@ -69,12 +76,20 @@ button.addEventListener('click', (e) => {
                 operand1 = solution;
                 operand2 = '';
             }
+            if (equation.length === MAX_LENGTH) {
+                alert("Equation is too long");
+                break;
+            }
             operator = target.textContent;
             break;
 
         case 'digit':
             if (lastInput === '=' && operand2 != '') {
                 reset();
+            }
+            if (equation.length === MAX_LENGTH) {
+                alert("Equation is too long");
+                break;
             }
             if (operand1 === '0' && operator === '') {
                 operand1 = target.textContent;
@@ -127,8 +142,13 @@ button.addEventListener('click', (e) => {
 
     lastInput = target.textContent;
 
-    let equation = operand1 + ' ' + operator + ' ' + operand2;
+    equation = operand1 + ' ' + operator + ' ' + operand2;
     displayEquation(equation);
+
+    //Round solution if it is too long
+    if (solution.toString().length > 15) {
+        solution = solution.toFixed(5);
+    }
     displayResult(solution);
 });
 
